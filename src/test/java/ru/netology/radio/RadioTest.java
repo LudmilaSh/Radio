@@ -6,6 +6,18 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void shouldSetAmountRadioStation() {
+        Radio radio = new Radio(5);
+        Assertions.assertEquals(5, radio.getAmountRadioStation());
+    }
+
+    @Test
+    public void shouldSetAmountRadioStationNoParam() {
+        Radio radio = new Radio();
+        Assertions.assertEquals(10, radio.getAmountRadioStation());
+    }
+
+    @Test
     public void shouldSetCurrentRadioStation() {
         Radio radio = new Radio();
 
@@ -63,8 +75,8 @@ public class RadioTest {
     public void shouldNotIncreaseMaxVolume() {
         Radio radio = new Radio();
 
-        radio.setChangingCurrentVolume(11);
-        int expected = 10;
+        radio.setChangingCurrentVolume(101);
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
