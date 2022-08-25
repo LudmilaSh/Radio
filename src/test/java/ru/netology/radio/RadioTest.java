@@ -12,6 +12,13 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldSetAmountRadioStationMoreLimit() {
+        Radio radio = new Radio(20);
+        radio.setCurrentRadioStation(15);
+        Assertions.assertEquals(15, radio.getCurrentRadioStation());
+    }
+
+    @Test
     public void shouldSetAmountRadioStationNoParam() {
         Radio radio = new Radio();
         Assertions.assertEquals(10, radio.getAmountRadioStation());
